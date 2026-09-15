@@ -1,0 +1,20 @@
+# Local game assets and download cache
+/public/minecraft/
+/.cache/
+
+# Development dependencies and output
+/node_modules/
+/.venv/
+/dist/
+/out/
+/.next/
+/.vinext/
+*.tsbuildinfo
+__pycache__/
+
+# Local configuration
+.env*
+!.env.example
+/.sites-runtime/
+/.agents/
+/.codex/

@@ -1,0 +1,47 @@
+{
+  "edition": "java",
+  "version": "1.12.2",
+  "client": {
+    "url": "https://piston-data.mojang.com/v1/objects/0f275bc1547d01fa5f56ba34bdc87d981ee12daf/client.jar",
+    "sha1": "0f275bc1547d01fa5f56ba34bdc87d981ee12daf"
+  },
+  "assetIndex": {
+    "url": "https://piston-meta.mojang.com/v1/packages/a21e1ded1a24ea1548dd8db0cf30b6acb02655a9/1.12.json",
+    "sha1": "a21e1ded1a24ea1548dd8db0cf30b6acb02655a9"
+  },
+  "textures": [
+    "assets/minecraft/textures/gui/widgets.png",
+    "assets/minecraft/textures/gui/options_background.png",
+    "assets/minecraft/textures/gui/title/background/panorama_0.png",
+    "assets/minecraft/textures/gui/title/background/panorama_1.png",
+    "assets/minecraft/textures/gui/title/background/panorama_2.png",
+    "assets/minecraft/textures/gui/title/background/panorama_3.png",
+    "assets/minecraft/textures/gui/title/background/panorama_4.png",
+    "assets/minecraft/textures/gui/title/background/panorama_5.png",
+    "assets/minecraft/textures/items/compass_16.png",
+    "assets/minecraft/textures/items/paper.png"
+  ],
+  "font": "assets/minecraft/textures/font/ascii.png",
+  "audio": [
+    {
+      "resource": "minecraft/sounds/random/click.ogg",
+      "sha1": "2fe092579d9637e2d160319820ee08e60a237bb7"
+    },
+    {
+      "resource": "minecraft/sounds/music/menu/menu1.ogg",
+      "sha1": "c157c56846f0e50620f808fecd9d069423dd6c41"
+    },
+    {
+      "resource": "minecraft/sounds/music/menu/menu2.ogg",
+      "sha1": "783ddccf4681a0c50d3e651f4e6ac27a0f4ea76f"
+    },
+    {
+      "resource": "minecraft/sounds/music/menu/menu3.ogg",
+      "sha1": "87722a59c8d488370f3d430cd4c97a3161081785"
+    },
+    {
+      "resource": "minecraft/sounds/music/menu/menu4.ogg",
+      "sha1": "15f38314274e759c44f50ac641d11bde12474a25"
+    }
+  ]
+}
