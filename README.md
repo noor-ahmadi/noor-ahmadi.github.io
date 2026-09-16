@@ -7,7 +7,7 @@ classic Minecraft Java menu. Play will open a world-selection-style project list
 
 The Java 1.12.2 asset sources are pinned in
 [`assets/minecraft-1.12.2.json`](assets/minecraft-1.12.2.json).
-The importer and website are not implemented yet.
+The asset importer is ready. The website is not implemented yet.
 
 The design uses original game textures, pixel glyphs, UI clicks, and optional
 menu music. No AI-generated images or audio.
@@ -16,7 +16,18 @@ menu music. No AI-generated images or audio.
 
 The manifest records official download locations, SHA-1 checksums, and resource
 paths. Game files and converted assets stay local and are excluded from Git.
-The next step is an importer that verifies these sources before extracting them.
+
+With Python 3.10 or newer, run:
+
+```sh
+python scripts/import_assets.py
+```
+
+This downloads the official client, asset index, and selected audio. It verifies
+their checksums and imports 10 textures, the font atlas, and 5 recordings into
+`public/minecraft/`, preserving their original bytes and resource directories.
+Downloads are cached under `.cache/minecraft/` and verified again on reuse.
+No extra Python packages are needed. The script works from any working directory.
 
 Minecraft assets belong to their respective rights holders. Public use needs to
 follow the [Minecraft usage guidelines](https://www.minecraft.net/en-us/usage-guidelines).
