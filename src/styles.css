@@ -4,6 +4,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Minecraft Title";
+  src: url("/minecraft/fonts/minecraft-ten.woff2") format("woff2");
+  font-display: swap;
+}
+
 :root {
   /* Scale the whole GUI together, with room for short windows and phones. */
   font-size: clamp(1rem, min(1.25vw, 2.2222svh), 2rem);
@@ -52,32 +58,30 @@ a { color: inherit; text-decoration: none; }
 .title { position: relative; width: min(100%, 44rem); text-align: center; }
 .title h1 {
   position: relative;
-  font-size: min(9vw, 4.75rem);
-  line-height: 1.2;
+  font-family: "Minecraft Title", "Minecraft", monospace;
+  font-size: min(12vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: 0.015em;
   white-space: nowrap;
-  transform: perspective(12em) rotateX(-12deg) scaleY(1.35);
-  transform-origin: center bottom;
   paint-order: stroke fill;
 }
 .title-depth {
   position: absolute;
   inset: 0;
   color: #737373;
-  -webkit-text-stroke: 0.075em #171717;
+  -webkit-text-stroke: 0.045em #171717;
   text-shadow:
-    0 0.04em #737373,
-    0 0.08em #737373,
-    0 0.12em #626262,
-    0 0.16em #505050,
-    0 0.2em #353535,
-    0 0.24em #171717;
+    0.015em 0.03em #888,
+    0.03em 0.06em #737373,
+    0.045em 0.09em #626262,
+    0.06em 0.12em #454545,
+    0.06em 0.16em #171717;
 }
 .title-face {
   position: relative;
   display: block;
   color: #d4d4d4;
-  -webkit-text-stroke: 0.035em #bcbcbc;
-  background: linear-gradient(rgb(255 255 255 / 65%), rgb(255 255 255 / 15%)),
+  background: linear-gradient(rgb(255 255 255 / 90%), rgb(255 255 255 / 50%)),
     url("/minecraft/textures/blocks/stone.png") 0 0 / 1em 1em;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -86,10 +90,11 @@ a { color: inherit; text-decoration: none; }
 }
 .edition {
   position: relative;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+  font-family: "Minecraft Title", "Minecraft", monospace;
   font-size: min(6vw, 1.5rem);
-  letter-spacing: 0.25em;
-  text-indent: 0.25em;
+  letter-spacing: 0.17em;
+  text-indent: 0.17em;
   text-shadow: 0.125rem 0.125rem #171717, 0 0.25rem #171717;
 }
 .splash {

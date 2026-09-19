@@ -63,6 +63,9 @@ def import_assets() -> int:
         url = f"https://resources.download.minecraft.net/{checksum[:2]}/{checksum}"
         assets[destination(resource, "minecraft")] = download(url, checksum)
 
+    display_font = json.loads((ROOT / "assets/minecraft-display-font.json").read_text(encoding="utf-8"))
+    assets[OUTPUT / "fonts/minecraft-ten.woff2"] = download(display_font["url"], display_font["sha1"])
+
     for target, data in assets.items():
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(data)
