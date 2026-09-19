@@ -1,5 +1,6 @@
 import { StrictMode, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { Panorama } from "./Panorama";
 import "./styles.css";
 
 const projects = [
@@ -71,6 +72,7 @@ function App() {
         playClick();
       }
     }}>
+      {screen === "menu" && <Panorama />}
       <audio ref={clickAudio} src="/minecraft/sounds/random/click.ogg" preload="auto" />
       <audio ref={musicAudio} src="/minecraft/sounds/music/menu/menu1.ogg" preload="none" loop />
 
