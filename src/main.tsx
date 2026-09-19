@@ -24,7 +24,13 @@ function App() {
   useEffect(() => {
     heading.current?.focus();
     const handleKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setScreen("menu");
+      if (event.key === "Escape" && !event.defaultPrevented) {
+        if (document.fullscreenElement) {
+          void document.exitFullscreen().catch(() => {});
+        } else {
+          setScreen("menu");
+        }
+      }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
