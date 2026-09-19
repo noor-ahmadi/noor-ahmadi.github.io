@@ -1,28 +1,18 @@
 import { StrictMode, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Panorama } from "./Panorama";
+import { WorkBrowser } from "./WorkBrowser";
+import { portfolio } from "./portfolio";
+import type { Collection } from "./portfolio";
 import "./styles.css";
-
-const projects = [
-  {
-    name: "Earthquake Monitor",
-    description: "Earthquake dashboard using USGS data.",
-    stack: "Spring Boot / PostgreSQL / TypeScript",
-    url: "https://github.com/noor-ahmadi/earthquake-monitor",
-    icon: "compass_16",
-  },
-  {
-    name: "Capitol Trade Watch",
-    description: "Alerts for congressional trade disclosures.",
-    stack: "Python",
-    url: "https://github.com/noor-ahmadi/capitol-trade-watch",
-    icon: "paper",
-  },
-];
 
 function App() {
   const [screen, setScreen] = useState<"menu" | "projects">("menu");
-  const [selected, setSelected] = useState(0);
+  const [collection, setCollection] = useState<Collection>("projects");
+  const [selection, setSelection] = useState<Record<Collection, string>>({
+    projects: portfolio.projects[0].id,
+    contributions: portfolio.contributions[0].id,
+  });
   const [sounds, setSounds] = useState(true);
   const [music, setMusic] = useState(false);
   const [musicError, setMusicError] = useState(false);
@@ -66,9 +56,14 @@ function App() {
     void audio.play().catch(() => {});
   }
 
+  function openBrowser(nextCollection: Collection) {
+    setCollection(nextCollection);
+    setScreen("projects");
+  }
+
   return (
     <div className={`game ${screen}`} onClickCapture={(event) => {
-      if (event.target instanceof Element && event.target.closest("button, a")) {
+      if (event.target instanceof Element && event.target.closest('button, a, input[type="radio"]')) {
         playClick();
       }
     }}>
@@ -84,7 +79,8 @@ function App() {
             <span className="splash" aria-hidden="true">Hello, world!</span>
           </header>
           <nav className="menu-controls" aria-label="Main menu">
-            <button className="mc-button" onClick={() => setScreen("projects")}>Play</button>
+            <button className="mc-button" onClick={() => openBrowser("projects")}>Play</button>
+            <button className="mc-button" onClick={() => openBrowser("contributions")}>Contributions</button>
             <a className="mc-button" href="https://github.com/noor-ahmadi" target="_blank" rel="noreferrer">GitHub</a>
             <div className="button-row sound-controls">
               <button className="mc-button" aria-pressed={sounds} onClick={() => setSounds(!sounds)}>
@@ -98,27 +94,14 @@ function App() {
           </nav>
         </main>
       ) : (
-        <main className="project-screen">
-          <h1 ref={heading} tabIndex={-1}>Select project</h1>
-          <ul className="worlds" aria-label="Projects">
-            {projects.map((project, index) => (
-              <li key={project.url}>
-                <button className="world" aria-pressed={selected === index} onClick={() => setSelected(index)}>
-                  <img src={`/minecraft/textures/items/${project.icon}.png`} alt="" width="48" height="48" />
-                  <span className="world-copy">
-                    <span className="world-name">{project.name}</span>
-                    <span>{project.description}</span>
-                    <span>{project.stack}</span>
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-          <div className="button-row project-controls">
-            <a className="mc-button" href={projects[selected].url} target="_blank" rel="noreferrer">Open on GitHub</a>
-            <button className="mc-button" onClick={() => setScreen("menu")}>Back</button>
-          </div>
-        </main>
+        <WorkBrowser
+          collection={collection}
+          selectedId={selection[collection]}
+          headingRef={heading}
+          onCollectionChange={setCollection}
+          onSelect={(id) => setSelection((current) => ({ ...current, [collection]: id }))}
+          onBack={() => setScreen("menu")}
+        />
       )}
 
       <footer>
