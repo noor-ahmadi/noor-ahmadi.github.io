@@ -21,7 +21,7 @@ export function WorkBrowser({ collection, selectedId, headingRef, onCollectionCh
   const selected = entries.find((entry) => entry.id === selectedId) ?? entries[0];
 
   return (
-    <main className="content-screen">
+    <main className="content-screen work-screen">
       <h1 ref={headingRef} tabIndex={-1}>
         {collection === "projects" ? "Select project" : "Select contribution"}
       </h1>
@@ -34,7 +34,7 @@ export function WorkBrowser({ collection, selectedId, headingRef, onCollectionCh
         </button>
       </div>
 
-      <div className="work-layout">
+      <div className="work-layout" tabIndex={0} role="region" aria-label="Projects and contributions">
         <fieldset className="worlds">
           <legend className="sr-only">{collection === "projects" ? "Projects" : "Contributions"}</legend>
           {entries.map((entry) => (
@@ -61,7 +61,7 @@ export function WorkBrowser({ collection, selectedId, headingRef, onCollectionCh
           ))}
         </fieldset>
 
-        <section className="work-details" id="work-details" aria-labelledby="work-title">
+        <section className="work-details" id="work-details" aria-labelledby="work-title" tabIndex={0}>
           <div className="work-kind">
             {selected.kind === "contribution" ? `Pull request #${selected.pullRequest}` : "Personal project"}
           </div>
