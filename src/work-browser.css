@@ -1,5 +1,4 @@
-.collection-controls { width: min(100%, 25rem); margin-inline: auto; flex-wrap: wrap; }
-.collection-controls > .mc-button { min-width: 10rem; }
+.collection-controls { width: min(100%, 25rem); margin-inline: auto; }
 .collection-controls [aria-pressed="true"] { color: #ffff55; outline: 0.125rem solid #aaa; outline-offset: 0.0625rem; }
 .collection-controls :focus-visible { outline: 0.125rem solid #fff; outline-offset: 0.1875rem; }
 .work-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1.5rem; }

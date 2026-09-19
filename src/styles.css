@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
 .title { position: relative; width: min(100%, 44rem); text-align: center; }
 .title h1 {
   position: relative;
-  font-size: clamp(1.75rem, 9vw, 4.75rem);
+  font-size: min(9vw, 4.75rem);
   line-height: 1.2;
   white-space: nowrap;
   transform: perspective(12em) rotateX(-12deg) scaleY(1.35);
@@ -87,7 +87,7 @@ a { color: inherit; text-decoration: none; }
 .edition {
   position: relative;
   margin-top: 1.5rem;
-  font-size: 1.5rem;
+  font-size: min(6vw, 1.5rem);
   letter-spacing: 0.25em;
   text-indent: 0.25em;
   text-shadow: 0.125rem 0.125rem #171717, 0 0.25rem #171717;
@@ -106,18 +106,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 .menu-controls { width: min(100%, 25rem); display: grid; gap: 0.5rem; }
-.button-row { display: flex; gap: 0.5rem; }
-.button-row > * { flex: 1; min-width: 0; }
-.sound-controls { margin-top: 1rem; flex-wrap: wrap; }
-.sound-controls > * { min-width: 10rem; }
+.button-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.button-row > * { flex: 1 1 10rem; min-width: 0; }
+.sound-controls { margin-top: 1rem; }
 
 .mc-button {
-  --sprite-y: -8.25rem;
+  --sprite-y: 27.9661016949%;
   position: relative;
   isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
   min-height: 2.5rem;
   border: 0;
   padding: 0.5rem 0.75rem;
@@ -126,10 +126,12 @@ a { color: inherit; text-decoration: none; }
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
+  overflow-wrap: anywhere;
   text-shadow: 0.125rem 0.125rem #383838;
 }
 
-/* Keep both ends of the original 200x20 button aligned with the GUI scale. */
+/* Each row is 20px in a 256px atlas. Percentages keep that row isolated
+   when a label wraps: height = 256 / 20; y = row offset / (256 - 20). */
 .mc-button::before, .mc-button::after {
   content: "";
   position: absolute;
@@ -137,16 +139,16 @@ a { color: inherit; text-decoration: none; }
   width: 50%;
   z-index: -1;
   background-image: url("/minecraft/textures/gui/widgets.png");
-  background-size: 32rem 32rem;
+  background-size: 32rem 1280%;
   background-repeat: no-repeat;
   image-rendering: pixelated;
 }
 .mc-button::before { left: 0; background-position: left 0 top var(--sprite-y); }
 .mc-button::after { right: 0; background-position: right -7rem top var(--sprite-y); }
-.mc-button:hover, .mc-button:focus-visible { --sprite-y: -10.75rem; color: #ffffa0; }
+.mc-button:hover, .mc-button:focus-visible { --sprite-y: 36.4406779661%; color: #ffffa0; }
 .mc-button:focus-visible { outline: 0.125rem solid white; outline-offset: 0.1875rem; }
 .mc-button:active { color: #ffff55; }
-.mc-button:disabled { --sprite-y: -5.75rem; color: #999; cursor: default; }
+.mc-button:disabled { --sprite-y: 19.4915254237%; color: #999; cursor: default; }
 .audio-error { font-size: 1rem; line-height: 1.5; text-align: center; }
 
 .content-screen {
@@ -157,6 +159,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  overflow-wrap: anywhere;
 }
 .content-screen h1 { text-align: center; font-size: 1.5rem; }
 .back-button { width: min(100%, 25rem); margin-inline: auto; }

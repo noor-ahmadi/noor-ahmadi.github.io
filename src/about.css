@@ -18,8 +18,6 @@
 .about-label { color: #ffff55; }
 .about-copy h2 { margin: 0; font-size: 2rem; font-weight: normal; }
 .about-pending { color: #aaa; }
-.about-links { flex-wrap: wrap; }
-.about-links > .mc-button { min-width: 10rem; }
 .about-edit { min-width: 0; margin: 0; text-align: center; }
 .about-edit video {
   display: block;
