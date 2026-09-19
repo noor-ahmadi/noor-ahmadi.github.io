@@ -5,11 +5,13 @@
 }
 
 :root {
+  /* Scale the whole GUI together, with room for short windows and phones. */
+  font-size: clamp(1rem, min(1.25vw, 2.2222svh), 2rem);
   font-family: "Minecraft", monospace;
   color: #fff;
   background: #20251b;
   font-synthesis: none;
-  text-shadow: 2px 2px #3f3f3f;
+  text-shadow: 0.125rem 0.125rem #3f3f3f;
   color-scheme: dark;
 }
 
@@ -75,13 +77,13 @@ a { color: inherit; text-decoration: none; }
 .sound-controls > * { min-width: 10rem; }
 
 .mc-button {
-  --sprite-y: -132px;
+  --sprite-y: -8.25rem;
   position: relative;
   isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  min-height: 2.5rem;
   border: 0;
   padding: 0.5rem 0.75rem;
   background: #777;
@@ -89,10 +91,10 @@ a { color: inherit; text-decoration: none; }
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
-  text-shadow: 2px 2px #383838;
+  text-shadow: 0.125rem 0.125rem #383838;
 }
 
-/* Draw both ends of the original 200x20 button at 2x scale. */
+/* Keep both ends of the original 200x20 button aligned with the GUI scale. */
 .mc-button::before, .mc-button::after {
   content: "";
   position: absolute;
@@ -100,21 +102,21 @@ a { color: inherit; text-decoration: none; }
   width: 50%;
   z-index: -1;
   background-image: url("/minecraft/textures/gui/widgets.png");
-  background-size: 512px 512px;
+  background-size: 32rem 32rem;
   background-repeat: no-repeat;
   image-rendering: pixelated;
 }
 .mc-button::before { left: 0; background-position: left 0 top var(--sprite-y); }
-.mc-button::after { right: 0; background-position: right -112px top var(--sprite-y); }
-.mc-button:hover, .mc-button:focus-visible { --sprite-y: -172px; color: #ffffa0; }
-.mc-button:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+.mc-button::after { right: 0; background-position: right -7rem top var(--sprite-y); }
+.mc-button:hover, .mc-button:focus-visible { --sprite-y: -10.75rem; color: #ffffa0; }
+.mc-button:focus-visible { outline: 0.125rem solid white; outline-offset: 0.1875rem; }
 .mc-button:active { color: #ffff55; }
 .audio-error { font-size: 1rem; line-height: 1.5; text-align: center; }
 
 .projects::before {
   inset: 0;
   background: url("/minecraft/textures/gui/options_background.png") repeat;
-  background-size: 64px 64px;
+  background-size: 4rem 4rem;
   image-rendering: pixelated;
   filter: brightness(0.4);
 }
