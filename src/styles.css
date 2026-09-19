@@ -49,17 +49,52 @@ a { color: inherit; text-decoration: none; }
   padding: 4rem 1.5rem;
 }
 
-.title { position: relative; text-align: center; }
+.title { position: relative; width: min(100%, 44rem); text-align: center; }
 .title h1 {
-  font-size: clamp(2rem, 7vw, 4rem);
-  line-height: 1.25;
-  color: #e0e0e0;
-  text-shadow: 0 4px #707070, 0 8px #252525, 4px 8px #252525;
+  position: relative;
+  font-size: clamp(1.75rem, 9vw, 4.75rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  transform: perspective(12em) rotateX(-12deg) scaleY(1.35);
+  transform-origin: center bottom;
+  paint-order: stroke fill;
 }
-.edition { margin-top: 1rem; font-size: 1rem; letter-spacing: 0.5rem; }
+.title-depth {
+  position: absolute;
+  inset: 0;
+  color: #737373;
+  -webkit-text-stroke: 0.075em #171717;
+  text-shadow:
+    0 0.04em #737373,
+    0 0.08em #737373,
+    0 0.12em #626262,
+    0 0.16em #505050,
+    0 0.2em #353535,
+    0 0.24em #171717;
+}
+.title-face {
+  position: relative;
+  display: block;
+  color: #d4d4d4;
+  -webkit-text-stroke: 0.035em #bcbcbc;
+  background: linear-gradient(rgb(255 255 255 / 65%), rgb(255 255 255 / 15%)),
+    url("/minecraft/textures/blocks/stone.png") 0 0 / 1em 1em;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  image-rendering: pixelated;
+}
+.edition {
+  position: relative;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
+  text-indent: 0.25em;
+  text-shadow: 0.125rem 0.125rem #171717, 0 0.25rem #171717;
+}
 .splash {
   position: absolute;
-  right: -1rem;
+  right: 0;
   bottom: -1.5rem;
   color: #ffff55;
   font-size: 1.5rem;

@@ -12,6 +12,7 @@
   "textures": [
     "assets/minecraft/textures/gui/widgets.png",
     "assets/minecraft/textures/gui/options_background.png",
+    "assets/minecraft/textures/blocks/stone.png",
     "assets/minecraft/textures/gui/title/background/panorama_0.png",
     "assets/minecraft/textures/gui/title/background/panorama_1.png",
     "assets/minecraft/textures/gui/title/background/panorama_2.png",

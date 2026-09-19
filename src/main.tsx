@@ -74,7 +74,10 @@ function App() {
       {screen === "menu" ? (
         <main className="title-screen">
           <header className="title">
-            <h1 ref={heading} tabIndex={-1}>NOOR AHMADI</h1>
+            <h1 ref={heading} tabIndex={-1}>
+              <span className="title-depth" aria-hidden="true">NOOR AHMADI</span>
+              <span className="title-face">NOOR AHMADI</span>
+            </h1>
             <p className="edition">PORTFOLIO</p>
             <span className="splash" aria-hidden="true">Hello, world!</span>
           </header>
