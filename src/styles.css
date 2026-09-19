@@ -167,7 +167,7 @@ a { color: inherit; text-decoration: none; }
   overflow-wrap: anywhere;
 }
 .content-screen h1 { text-align: center; font-size: 1.5rem; }
-.back-button { width: min(100%, 25rem); margin-inline: auto; }
+.back-button { position: sticky; bottom: 1rem; z-index: 1; width: min(100%, 25rem); margin-inline: auto; }
 
 .projects::before, .about::before {
   inset: 0;

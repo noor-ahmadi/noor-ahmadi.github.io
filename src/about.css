@@ -1,4 +1,4 @@
-.game.about { height: 100svh; min-height: 0; }
+.game.about { height: max(100svh, 36rem); min-height: 0; }
 .about footer { flex-shrink: 0; }
 .content-screen.about-screen {
   max-width: 60rem;
@@ -34,7 +34,7 @@
 .about-layout:focus-visible, .about-copy:focus-visible { outline: 0.125rem solid white; outline-offset: -0.125rem; }
 .text-link { color: #ffffa0; text-decoration: underline; text-underline-offset: 0.2em; }
 .text-link:focus-visible { outline: 0.125rem solid white; outline-offset: 0.1875rem; }
-.about-edit { min-width: 0; margin: 0; text-align: center; }
+.about-edit { position: relative; min-width: 0; margin: 0; text-align: center; }
 .about-edit video, .about-edit img {
   display: block;
   width: auto;

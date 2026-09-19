@@ -1,4 +1,4 @@
-.game.projects { height: 100svh; min-height: 0; }
+.game.projects { height: max(100svh, 36rem); min-height: 0; }
 .projects footer { flex-shrink: 0; }
 .content-screen.work-screen {
   min-height: 0;

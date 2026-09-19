@@ -61,7 +61,7 @@ export function WorkBrowser({ collection, selectedId, headingRef, onCollectionCh
           ))}
         </fieldset>
 
-        <section className="work-details" id="work-details" aria-labelledby="work-title" tabIndex={0}>
+        <section className="work-details" id="work-details" aria-labelledby="work-title" tabIndex={0} key={selected.id}>
           <div className="work-kind">
             {selected.kind === "contribution" ? `Pull request #${selected.pullRequest}` : "Personal project"}
           </div>
