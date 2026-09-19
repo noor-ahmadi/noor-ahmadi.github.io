@@ -21,7 +21,7 @@ export function WorkBrowser({ collection, selectedId, headingRef, onCollectionCh
   const selected = entries.find((entry) => entry.id === selectedId) ?? entries[0];
 
   return (
-    <main className="project-screen">
+    <main className="content-screen">
       <h1 ref={headingRef} tabIndex={-1}>
         {collection === "projects" ? "Select project" : "Select contribution"}
       </h1>
@@ -82,7 +82,7 @@ export function WorkBrowser({ collection, selectedId, headingRef, onCollectionCh
         </section>
       </div>
 
-      <button className="mc-button browser-back" onClick={onBack}>Back</button>
+      <button className="mc-button back-button" onClick={onBack}>Back</button>
     </main>
   );
 }

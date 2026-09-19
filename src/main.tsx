@@ -1,13 +1,14 @@
 import { StrictMode, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Panorama } from "./Panorama";
+import { About } from "./About";
 import { WorkBrowser } from "./WorkBrowser";
 import { portfolio } from "./portfolio";
 import type { Collection } from "./portfolio";
 import "./styles.css";
 
 function App() {
-  const [screen, setScreen] = useState<"menu" | "projects">("menu");
+  const [screen, setScreen] = useState<"menu" | "projects" | "about">("menu");
   const [collection, setCollection] = useState<Collection>("projects");
   const [selection, setSelection] = useState<Record<Collection, string>>({
     projects: portfolio.projects[0].id,
@@ -84,7 +85,7 @@ function App() {
           <nav className="menu-controls" aria-label="Main menu">
             <button className="mc-button" onClick={() => openBrowser("projects")}>Play</button>
             <button className="mc-button" onClick={() => openBrowser("contributions")}>Contributions</button>
-            <a className="mc-button" href="https://github.com/noor-ahmadi" target="_blank" rel="noreferrer">GitHub</a>
+            <button className="mc-button" onClick={() => setScreen("about")}>About Me</button>
             <div className="button-row sound-controls">
               <button className="mc-button" aria-pressed={sounds} onClick={() => setSounds(!sounds)}>
                 Sounds: {sounds ? "ON" : "OFF"}
@@ -96,6 +97,8 @@ function App() {
             {musicError && <p className="audio-error" role="status">Music could not play. Try again.</p>}
           </nav>
         </main>
+      ) : screen === "about" ? (
+        <About headingRef={heading} onBack={() => setScreen("menu")} />
       ) : (
         <WorkBrowser
           collection={collection}

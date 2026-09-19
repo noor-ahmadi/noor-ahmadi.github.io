@@ -146,9 +146,22 @@ a { color: inherit; text-decoration: none; }
 .mc-button:hover, .mc-button:focus-visible { --sprite-y: -10.75rem; color: #ffffa0; }
 .mc-button:focus-visible { outline: 0.125rem solid white; outline-offset: 0.1875rem; }
 .mc-button:active { color: #ffff55; }
+.mc-button:disabled { --sprite-y: -5.75rem; color: #999; cursor: default; }
 .audio-error { font-size: 1rem; line-height: 1.5; text-align: center; }
 
-.projects::before {
+.content-screen {
+  flex: 1;
+  width: min(100%, 68rem);
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.content-screen h1 { text-align: center; font-size: 1.5rem; }
+.back-button { width: min(100%, 25rem); margin-inline: auto; }
+
+.projects::before, .about::before {
   inset: 0;
   background: url("/minecraft/textures/gui/options_background.png") repeat;
   background-size: 4rem 4rem;
@@ -166,6 +179,7 @@ footer {
 
 @media (max-width: 480px) {
   .title-screen { padding: 3rem 1rem; }
+  .content-screen { padding: 2rem 1rem; }
   .splash { right: 0; font-size: 1rem; }
   footer { flex-direction: column; gap: 0.25rem; }
 }

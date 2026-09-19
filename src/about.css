@@ -1,0 +1,48 @@
+.about-screen { max-width: 56rem; }
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 2rem;
+}
+.about-copy {
+  min-width: 0;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 0.125rem solid #777;
+  background: rgb(0 0 0 / 65%);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.about-label { color: #ffff55; }
+.about-copy h2 { margin: 0; font-size: 2rem; font-weight: normal; }
+.about-pending { color: #aaa; }
+.about-links { flex-wrap: wrap; }
+.about-links > .mc-button { min-width: 10rem; }
+.about-edit { min-width: 0; margin: 0; text-align: center; }
+.about-edit video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(26rem, max(20rem, 100svh - 16rem));
+  aspect-ratio: 9 / 16;
+  margin-inline: auto;
+  border: 0.125rem solid #777;
+  background: #000;
+  object-fit: contain;
+}
+.about-edit video:focus-visible { outline: 0.125rem solid white; outline-offset: 0.1875rem; }
+.about-edit video:fullscreen { width: 100%; height: 100%; max-width: none; max-height: none; border: 0; }
+.about-edit figcaption { margin-top: 0.75rem; color: #ccc; font-size: 0.875rem; line-height: 1.5; }
+.video-error { padding: 2rem; background: rgb(0 0 0 / 65%); line-height: 1.5; }
+
+@media (max-width: 760px) {
+  .about-layout { grid-template-columns: minmax(0, 1fr); }
+  .about-edit video { max-height: 65svh; }
+}
+
+@media (max-width: 480px) {
+  .about-copy { padding: 1rem; }
+}
