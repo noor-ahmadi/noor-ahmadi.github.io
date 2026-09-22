@@ -26,29 +26,29 @@ export function About({ headingRef, onBack }: Props) {
         <section className="about-copy" aria-labelledby="about-name" tabIndex={0}>
           <h2 id="about-name">Noor Ahmadi</h2>
           <p>
-            Hi, my name is Noor Ahmadi! I'm a software engineer at Invesco,
-            where I've been working for the past two years. Before that,
-            I studied computer science at Georgia Tech.
+            Hi, I'm Noor! I studied computer science at Georgia Tech and
+            have been working as a software engineer at Invesco since 2024.
           </p>
           <div className="button-row about-links">
             <a className="mc-button" href="/NOOR_AHMADI_RESUME.pdf" target="_blank" rel="noreferrer">Resume</a>
             <a className="mc-button" href="https://github.com/noor-ahmadi" target="_blank" rel="noreferrer">GitHub</a>
           </div>
           <p>
-            Outside of work, I love hiking and traveling. I've done lots of
-            hikes in the Pacific Northwest and a few in Hawaii and Switzerland.
-            I've also visited Japan, France, and Costa Rica.
+            Outside of work, I love hiking and traveling. I've spent a lot
+            of time on trails in the Pacific Northwest, with a few hikes in
+            Hawaii and Switzerland too. I've also visited Japan, France,
+            and Costa Rica.
           </p>
           <p>
-            I love to read. East of Eden is a recent favorite, and I also love
-            sci fi and fantasy. The Sword of Kaigen is another book I really
-            enjoyed. I read a lot of manhwa and watch anime too.
-            {" "}<a className="text-link" href="https://www.goodreads.com/user/show/170681793" target="_blank" rel="noreferrer">Here's my Goodreads</a>
-            {" "}if you want to see what else I've been reading.
+            I'm also a big reader. East of Eden is a recent favorite, and
+            I love science fiction and fantasy, especially books like
+            The Sword of Kaigen. You can see what else I've been reading on
+            {" "}<a className="text-link" href="https://www.goodreads.com/user/show/170681793" target="_blank" rel="noreferrer">Goodreads</a>.
           </p>
           <p>
-            I also like playing Marvel Rivals and Valorant, but lately I've
-            been really into Palworld.
+            Beyond books, I read a lot of manhwa and watch anime. When it
+            comes to games, I enjoy Marvel Rivals and Valorant, though
+            lately I've been really into Palworld.
           </p>
         </section>
 
