@@ -90,7 +90,12 @@
 }
 
 @media (max-width: 760px) {
-  .work-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; }
+  .work-layout {
+    grid-template-columns: minmax(0, 1fr);
+    /* Keep stacked panels at their content height inside the shared scroller. */
+    grid-template-rows: max-content max-content;
+    align-content: start;
+  }
   .worlds, .work-details { overflow-y: visible; }
 }
 
