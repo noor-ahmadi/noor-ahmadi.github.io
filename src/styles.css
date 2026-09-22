@@ -184,12 +184,14 @@ footer {
   font-size: 0.875rem;
   line-height: 1.5;
 }
+.fan-notice { max-width: 34rem; text-align: right; }
 
 @media (max-width: 480px) {
   .title-screen { padding: 3rem 1rem; }
   .content-screen { padding: 2rem 1rem; }
   .splash { right: 0; font-size: 1rem; }
   footer { flex-direction: column; gap: 0.25rem; }
+  .fan-notice { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {

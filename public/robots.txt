@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noor-ahmadi.github.io/sitemap.xml

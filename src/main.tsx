@@ -118,7 +118,7 @@ function App() {
 
       <footer>
         <span>Noor Ahmadi</span>
-        <span>Unofficial Minecraft-inspired portfolio</span>
+        <span className="fan-notice">Unofficial Minecraft portfolio. Not approved by or affiliated with Mojang or Microsoft.</span>
       </footer>
     </div>
   );
