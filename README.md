@@ -1,4 +1,4 @@
 # Noor's portfolio
 
-Working on a portfolio that looks like the old Minecraft menu. Got the original
-textures and sounds importing, still putting the site together.
+My portfolio, inspired by the old Minecraft menu. It has my projects, open source
+work, and a bit about me. Getting it ready for GitHub Pages.
