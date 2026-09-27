@@ -32,6 +32,21 @@ export const portfolio: Record<Collection, readonly PortfolioEntry[]> = {
       url: "https://github.com/noor-ahmadi/earthquake-monitor",
     },
     {
+      id: "mortgage-lending-analysis",
+      kind: "project",
+      name: "Mortgage Lending Analysis",
+      summary: "Atlanta mortgage outcomes. In progress.",
+      description: "An explorer for mortgage application outcomes in Greater Atlanta using public HMDA data. It compares reported outcomes and financial data coverage, with deeper analysis still in progress.",
+      technologies: ["Python", "Java", "Spring Boot", "PostgreSQL", "React", "TypeScript"],
+      highlights: [
+        "Filters by county, lender, and loan product.",
+        "Compares demographic outcomes and financial data coverage.",
+        "Exports CSV data and SVG charts with the analysis settings.",
+      ],
+      icon: "paper",
+      url: "https://github.com/noor-ahmadi/mortgage-lending-analysis",
+    },
+    {
       id: "vpc-networking-lab",
       kind: "project",
       name: "VPC Networking Lab",
