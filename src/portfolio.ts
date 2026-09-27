@@ -49,6 +49,22 @@ export const portfolio: Record<Collection, readonly PortfolioEntry[]> = {
   ],
   contributions: [
     {
+      id: "checkstyle-21637",
+      kind: "contribution",
+      name: "Checkstyle",
+      summary: "Check lambda names in switch expressions.",
+      description: "Fixed a case where Checkstyle skipped lambda parameter names inside switch expressions, so invalid names are now reported.",
+      technologies: ["Java", "Maven"],
+      highlights: [
+        "Distinguished switch arrows from lambda expressions.",
+        "Added regression coverage for lambda forms and XPath suppression.",
+      ],
+      icon: "paper",
+      pullRequest: 21637,
+      mergedOn: "2026-09-20",
+      url: "https://github.com/checkstyle/checkstyle/pull/21637",
+    },
+    {
       id: "opentelemetry-8775",
       kind: "contribution",
       name: "OpenTelemetry Java",
