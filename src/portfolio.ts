@@ -32,6 +32,21 @@ export const portfolio: Record<Collection, readonly PortfolioEntry[]> = {
       url: "https://github.com/noor-ahmadi/earthquake-monitor",
     },
     {
+      id: "vpc-networking-lab",
+      kind: "project",
+      name: "VPC Networking Lab",
+      summary: "Linux networking lab. In progress.",
+      description: "I'm building a small VPC using Linux namespaces, virtual Ethernet links, and routing. The local lab connects three subnet segments, with NAT and an AWS version still to come.",
+      technologies: ["Linux", "Bash", "iproute2", "tcpdump"],
+      highlights: [
+        "Routes IPv4 traffic between three subnet segments.",
+        "Captures ARP traffic and checks connectivity.",
+        "Automated checks cover setup, cleanup, and routing failures.",
+      ],
+      icon: "compass_16",
+      url: "https://github.com/noor-ahmadi/vpc-networking-lab",
+    },
+    {
       id: "capitol-trade-watch",
       kind: "project",
       name: "Capitol Trade Watch",
