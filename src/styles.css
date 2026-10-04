@@ -41,7 +41,8 @@ a { color: inherit; text-decoration: none; }
   position: fixed;
   inset: -12px;
   z-index: -1;
-  background: url("/minecraft/textures/gui/title/background/panorama_0.png") center / cover;
+  background: url("/minecraft/textures/gui/title/background/panorama_0.png") center / cover,
+    url("./panorama-preview.png") center / cover;
   filter: blur(3px) brightness(0.8);
 }
 
@@ -141,7 +142,8 @@ a { color: inherit; text-decoration: none; }
   content: "";
   position: absolute;
   inset-block: 0;
-  width: 50%;
+  /* Overlap the sprite halves to cover seams at fractional display scales. */
+  width: calc(50% + 1px);
   z-index: -1;
   background-image: url("/minecraft/textures/gui/widgets.png");
   background-size: 32rem 1280%;
